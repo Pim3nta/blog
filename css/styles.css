@@ -1,0 +1,309 @@
+* {
+    /*RESETADO AS CONFIGURAÇÕES*/
+    padding: 0;
+    margin: 0;
+    /*LIMITA AS IMAGENS NA BORDA, ASSIM PADRONIZA TODOS OS COMPONENTES*/
+    box-sizing: border-box;
+    /*Importando a fonte do google no projeto*/
+    font-family: 'Montserrat', sans-serif;
+}
+
+html {
+    /*Tamanho minimo para que o usuário veja na tela*/
+    min-height: 100vh;
+    position: relative;
+}
+
+main {
+    /*espaçamento entre conteudo e o rodapé do site*/
+    margin-bottom: 250px;
+}
+
+/*CSS DO NAVBAR */
+#logo {
+    position: absolute;
+    /*10px do topo*/
+    top: 10px;
+    /*9,5 a esquerda*/
+    left: 9.5%;
+}
+
+/*tamanho da imagem*/
+#logo img {
+    /*largura*/
+    width: 50px;
+}
+#navbar {
+    /**/
+    display: flex;
+    /*alinhar os itens ao centro*/
+    align-items: center;
+    /*conteudo ao centro*/
+    justify-content: center;
+    background-color: #161616;
+    /*espaçamento*/
+    padding: 20px;
+    text-transform: uppercase;
+    /*estilo lista*/
+    list-style: none;
+}
+
+/*CSS DOS ITENS DA LISTA*/
+#navbar li {
+    margin: 0 10px;
+    padding: 5px;
+}
+
+#navbar .nav-link {
+    color: #fff;
+    /*RETIRA O UNDERLINE DOS HIPERLINKS*/
+    text-decoration: none;
+    /*ELE FAZ A TRANSIÇÃO DOS ITENS*/
+    transition: 0.5s;
+    font-size: 14px;
+}
+
+/*Quando passa o mouse por cima dos elementos*/
+#navbar .nav-link:hover {
+    color: #999;
+}
+
+/* HOME PAGE*/
+
+#title-container {
+    /*LARGURA MINIMA*/
+    min-width: 500px;
+    text-align: center;
+    margin-top: 30px;
+}
+
+#title-container h1 {
+    font-size: 50px;
+}
+
+/*titulos do containers*/
+#title-container p {
+    margin-top: 10px;
+    text-transform: uppercase;
+    color: #999;
+}
+
+/*POSTS*/
+
+#posts-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    /*Afastando do titulo*/
+    margin-top: 30px;
+    display: flex;
+    /*uma medida de imagens na tela, como ela suporta 3 ela joga o resto para baixo*/
+    flex-wrap: wrap;
+}
+
+.post-box:first-child {
+    min-width: 100%;
+}
+
+.post-box {
+    flex: 1 1 0;
+    /*distancimento do total da pagina*/
+    margin-bottom: 20%;
+}
+
+.post-box:nth-child(3) {
+    margin: 0 1%;
+}
+
+.post-box img {
+    width: 100%;
+}
+
+.post-box .post-title {
+    font-size: 24px;
+    /*MARGEM ENCIMA E EMBAIXO 10PX LATERAIS 0PX*/
+    margin: 10px 0;
+}
+
+/*post dos hiperlinks*/
+.post-box .post-title a {
+    color: #000;
+    transition: 0.5s;
+}
+
+.post-box .post-title a:hover {
+    color: #999;
+}
+
+.post-box .post-description {
+    color: #666;
+}
+
+.tags-container {
+    margin-top: 10px;
+}
+
+.tags-container a {
+    font-size: 14px;
+    color: #333;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+/*POST ASIDE*/
+.nav-container {
+    /*DELIMITANDO*/
+    grid-area: sidebar;
+}
+
+#tags-title,
+#categories-title {
+    /*ESTILOS SEMELHANTES DE FONTE*/
+    font-size: 24px;
+    margin-bottom: 10px;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    font-weight: 300;
+}
+
+/*ESTILOS SEMELHANTES DE FONTE da lista*/
+#tags-list,
+#categories-list {
+    list-style: none;
+}
+/*ESTILOS SEMELHANTES DOS ITENS DA LISTA*/
+#tags-list li,
+#categories-list li {
+    /*Espaçamento de itens*/
+    margin-bottom: 10px;
+}
+
+/*HIPERLINK*/
+#tags-list a,
+#categories-list a {
+    color: #666;
+    transition: 0.5s;
+}
+
+#tags-list a:hover,
+#categories-list a:hover {
+    color: #000;
+}
+
+/*POST*/
+
+#post-container {
+    /**/
+    display: grid;
+    /*Uma coluna vai ter 75% e a outra 25% da barra lateral*/
+    grid-template-columns: 75% 25%;
+    /*Tamanho dos post sera automático*/
+    grid-template-rows: auto;
+    /*2 areas*/
+    grid-template-areas: "main sidebar";
+    /*espaçamento entre os posts*/
+    grid-gap: 10px;
+    /*espaçamento top*/
+    padding-top: 30px;
+    /*espaçamento da barra de navegação*/
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-bottom: 250px;
+}
+
+.content-container {
+    /*separando o container como main*/
+    grid-area: main;
+}
+
+/*titulo do post*/
+#main-title {
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+
+#post-description {
+    font-style: italic;
+    margin-bottom: 40px;
+}
+/*texto dentro do post*/
+.post-content {
+    line-height: 1.8;
+    margin: 10px 0;
+}
+
+.img-container {
+    margin-bottom: 30px;
+}
+
+.img-container img {
+    margin-bottom: 60%;
+}
+
+/*FOOTER*/
+footer {
+    /*100% Da largura da pagina*/
+    width: 100%;
+    /*Posição absoluta porque ela vai ficar travada na parte background*/
+    position: absolute;
+    /*Joga o footer para embaixo da tela*/
+    bottom: 0;
+    text-align: center;
+    background-color: #000;
+    /*Fonte de cor branca*/
+    color: #fff;
+    padding: 50px 0;
+}
+
+/* MOBILE */
+/*AO ENTRAR EM TELA COM MENOR QUE 480, ENTAO ADOTARÁ ESSE CSS*/
+@media (max-width: 480px) {
+    /*HOME*/
+    /*OCULTAR O MENU*/
+    header {
+        width: 100%;
+    }
+
+    #logo {
+        display: block;
+        position: relative;
+        /*centralizar*/
+        margin: 0 auto;
+        /*zerando o left*/
+        left: 0;
+        /*centralizando logo*/
+        width: 50px;
+    }
+
+    #navbar {
+        /*o navbar ficará estavel*/
+        display: none;
+    }
+    /*diminuir o titulo*/
+    #title-container {
+        min-width: 100%;
+        margin-top: 20px;
+    }
+    /*drminuir post*/
+    #post-container {
+        margin-top: 20px;
+    }
+    /*diminuir box*/
+    .post-box {
+        flex: 100% 1 0;
+        padding: 15px;
+        margin: 0;
+    }
+    /*CSS DO POST INDVIDUAL*/
+    #post-container {
+        grid-template-columns: 100%;
+        padding: 15px;
+        grid-template-areas:
+            "main"
+            "sidebar";
+    }
+    .img-container img {
+        width: 100%;
+    }
+}
